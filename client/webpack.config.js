@@ -18,13 +18,26 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        title: 'Spinner',
+        template: 'client/index.html',
+      }),
+      new InjectManifest({
+        swSrc: './client/src/src-sw.js',
+        swDest: 'src-sw.js',
+
+      })
     ],
 
     module: {
       rules: [
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
         
       ],
     },
+    
   };
 };
