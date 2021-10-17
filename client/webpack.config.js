@@ -26,6 +26,13 @@ module.exports = () => {
         swSrc: './client/src/src-sw.js',
         swDest: 'src-sw.js',
 
+      }),
+      new WebpackPwaManifest({
+        name: "Just Another Text Editor",
+        short_name: "J.A.T.E",
+        description: "Take notes with javascript",
+        background_color: " ",
+
       })
     ],
 
@@ -38,6 +45,6 @@ module.exports = () => {
         
       ],
     },
-    
+     
   };
 };
